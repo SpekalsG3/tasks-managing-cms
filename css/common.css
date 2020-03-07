@@ -1,0 +1,139 @@
+body {
+  margin: 0;
+}
+
+.header {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: #4a76a8;
+}
+
+.header__home,
+.header__login,
+.header__logout {
+  font: 25px Arial;
+  color: white;
+  text-decoration: none;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+}
+
+.msg {
+  padding: 15px;
+  max-width: 80%;
+  width: fit-content;
+  text-align: center;
+  border-radius: 5px;
+  background: #eee;
+}
+
+.msg__title {
+  padding-bottom: 10px;
+  font: bold 25px Arial;
+}
+
+.msg__text {
+  margin-top: 15px;
+  font: 20px Arial;
+}
+
+.msg--error,
+.popup--error {
+  background: #ff9494;
+  border: 3px solid #ff6363;
+}
+
+.popup {
+  opacity: 0;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  top: 110px;
+  padding: 20px;
+  border-radius: 15px;
+  transition: .2s;
+}
+
+.popup--msg {
+  border: 3px solid #63ff63;
+  background: #94ff94;
+}
+
+.popup__title {
+  font-weight: bold;
+}
+
+.popup__body {
+  margin-top: 10px;
+}
+
+.form {
+  padding: 20px;
+  width: 400px;
+  border-radius: 5px;
+  background: white;
+}
+
+.form__title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.form__inputs {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form__input {
+  width: 100%;
+  border: 1px solid rgba(44, 56, 74, .8);
+  border-radius: 3px;
+  padding: 6px;
+}
+
+.form__input--textarea {
+  max-height: 50vh;
+  resize: vertical;
+}
+
+.form__input::placeholder {
+  font: 12px Arial;
+  color: rgba(44, 56, 74, .3);
+}
+
+.form__input + .form__input {
+  margin-top: 15px;
+}
+
+.form__submit {
+  padding: 8px 0;
+  margin-top: 20px;
+  width: 100%;
+  background: #ffc761;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.form__submit--half {
+  width: calc((100% - 10px) / 2);
+}
+
+.form__submit--half + .form__submit--half {
+  margin-left: 10px;
+}
+
+.form__submit--second {
+  display: none;
+}
