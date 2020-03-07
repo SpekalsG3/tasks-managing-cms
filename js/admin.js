@@ -1,7 +1,10 @@
 var prevWasAdd = true;
 
 var selectedRow = "";
+<<<<<<< HEAD
 var selected;
+=======
+>>>>>>> 2846238ed0b4a9f3569ca416b588d8123b97fdaf
 
 function entitiesToChar(str) {
   return str.replace(/&amp;/g, "&")
