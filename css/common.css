@@ -21,7 +21,6 @@ body {
 
 .content {
   display: flex;
-  justify-content: center;
 }
 
 .msg {
