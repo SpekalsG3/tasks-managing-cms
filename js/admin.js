@@ -1,10 +1,7 @@
 var prevWasAdd = true;
 
 var selectedRow = "";
-<<<<<<< HEAD
 var selected;
-=======
->>>>>>> 2846238ed0b4a9f3569ca416b588d8123b97fdaf
 
 function entitiesToChar(str) {
   return str.replace(/&amp;/g, "&")
@@ -42,7 +39,7 @@ document.addEventListener("click", function(e) {
 document.getElementsByClassName("header__logout")[0].onclick = function(e) {
   e.preventDefault();
   ajax({
-    url: this.href,
+    url: "ajax?action=logout",
     method: "GET",
     callback: function(response) {
       if (response[0] === "error")
@@ -77,7 +74,7 @@ formSubmits[0].onclick = function(e) {
   if (req == "")
     return;
   ajax({
-    url: this.parentNode.action + "?action=" + (prevWasAdd ? "add" : "edit&query=" + selectedRow) + req + (!prevWasAdd && formInputs[2].value == selected[2].children[0].innerHTML ? "" : "&taskedited=true"),
+    url: "ajax?action=" + (prevWasAdd ? "add" : "edit&query=" + selectedRow) + req + (!prevWasAdd && formInputs[2].value == selected[2].children[0].innerHTML ? "" : "&taskedited=true"),
     method: "GET",
     callback: function(response) {
       console.log(response);
@@ -92,7 +89,7 @@ formSubmits[0].onclick = function(e) {
           ShowPopup("Error", "Error occured while " + (prevWasAdd ? "adding" : "saving") + " task", true);
       } else if (response[0] === "redirect") {
         if (response[1] === "login")
-          window.location = "./login.php?popup=error&title=Permission denied&msg=You have to be authorized to edit tasks";
+          window.location = "./login?popup=error&title=Permission denied&msg=You have to be authorized to edit tasks";
       }
     }
   });
@@ -101,7 +98,7 @@ formSubmits[0].onclick = function(e) {
 formSubmits[1].onclick = function(e) {
   e.preventDefault();
   ajax({
-    url: this.parentNode.action + "?action=delete&query=" + selectedRow,
+    url: "ajax?action=delete&query=" + selectedRow,
     method: "GET",
     callback: function(response) {
       if (response[0] === "error")
@@ -115,7 +112,7 @@ formSubmits[1].onclick = function(e) {
           ShowPopup("Error", "Error occured while deleting this task", true);
       } else if (response[0] === "redirect") {
         if (response[1] === "login")
-          window.location = "./login.php?popup=error&title=Permission denied&msg=You have to be authorized to delete tasks";
+          window.location = "./login?popup=error&title=Permission denied&msg=You have to be authorized to delete tasks";
       }
     }
   });
@@ -164,7 +161,7 @@ addTask = function(args) {
     task.children[2].appendChild(edited);
   }
   var editBtn = document.createElement("img");
-  editBtn.src = "./img/edit.png";
+  editBtn.src = "img/edit.png";
   editBtn.className = "tasks__edit";
   editBtn.setAttribute("data-index", args[5]);
   task.appendChild(editBtn);

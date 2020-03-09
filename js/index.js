@@ -62,7 +62,7 @@ formSubmits[0].onclick = function(e) {
   if (req == "")
     return;
   ajax({
-    url: this.parentNode.action + "?action=add" + req,
+    url: "ajax?action=add" + req,
     method: "GET",
     callback: function(response) {
       if (response[0] === "error")

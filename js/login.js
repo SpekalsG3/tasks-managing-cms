@@ -11,7 +11,7 @@ document.getElementsByClassName("form__inputs")[0].onsubmit = function(e) {
   }
 
   ajax({
-    url: this.action,
+    url: "ajax?action=login",
     method: "POST",
     request: req,
     callback: function(response) {
