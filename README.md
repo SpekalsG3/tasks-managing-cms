@@ -2,4 +2,4 @@
 
 ## View
 
-You can see this project on [t̶h̶i̶s̶ ̶p̶a̶g̶e̶](./)
+You can see this project on [this free hosted page](http://simplecms.zzz.com.ua/)
